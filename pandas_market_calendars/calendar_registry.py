@@ -35,6 +35,8 @@ from .calendars.six import SIXExchangeCalendar
 from .calendars.sse import SSEExchangeCalendar
 from .calendars.tase import TASEExchangeCalendar
 from .calendars.tsx import TSXExchangeCalendar
+from .calendars.dce import DCEExchangeCalendar
+from .calendars.dce_night import DCENightExchangeCalendar
 from .calendars.mirror import *
 
 

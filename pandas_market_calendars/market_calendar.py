@@ -59,6 +59,8 @@ class MarketCalendar(metaclass=MarketCalendarMeta):
         "market_close": False,
         "break_start": False,
         "break_end": True,
+        "tea_break_start": False,
+        "tea_break_end": True,
         "pre": True,
         "post": False,
     }
