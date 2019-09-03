@@ -12,6 +12,8 @@ from .exchange_calendar_ose import OSEExchangeCalendar
 from .exchange_calendar_six import SIXExchangeCalendar
 from .exchange_calendar_tsx import TSXExchangeCalendar
 from .exchange_calendar_sse import SSEExchangeCalendar
+from .exchange_calendar_dce import DCEExchangeCalendar
+from .exchange_calendar_dce_night import DCENightExchangeCalendar
 from .exchange_calendar_hkex import HKEXExchangeCalendar
 
 
