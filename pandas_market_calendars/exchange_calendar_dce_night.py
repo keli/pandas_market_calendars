@@ -9,7 +9,7 @@ from pytz import timezone
 from pandas.tseries.holiday import AbstractHolidayCalendar
 from pandas_market_calendars.holidays_us import USNewYearsDay
 
-from pandas_market_calendars import MarketCalendar
+from .market_calendar import MarketCalendar
 from .exchange_calendar_sse import SSEExchangeCalendar
 from .holidays_cn import *
 
