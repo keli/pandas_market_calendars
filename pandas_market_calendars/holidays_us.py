@@ -1,29 +1,10 @@
-from pandas import (
-    Timestamp,
-    DateOffset,
-    date_range,
-)
-
-from pandas.tseries.holiday import (
-    Holiday,
-    sunday_to_monday,
-    nearest_workday,
-)
-
-from dateutil.relativedelta import (
-    MO,
-    TU,
-    TH
-)
+from dateutil.relativedelta import (MO, TH, TU)
+from pandas import (DateOffset, Timestamp, date_range)
+from pandas.tseries.holiday import (Holiday, nearest_workday, sunday_to_monday)
 from pandas.tseries.offsets import Day
 
-from pandas_market_calendars.market_calendar import (
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-)
+from pandas_market_calendars.market_calendar import (FRIDAY, MONDAY, THURSDAY, TUESDAY, WEDNESDAY)
+
 
 # These have the same definition, but are used in different places because the
 # NYSE closed at 2:00 PM on Christmas Eve until 1993.
@@ -156,21 +137,21 @@ USIndependenceDay = Holiday(
 )
 # http://www.tradingtheodds.com/nyse-full-day-closings/
 USElectionDay1848to1967 = Holiday(
-        'Election Day',
-        month=11,
-        day=2,
-        start_date=Timestamp('1848-1-1'),
-        end_date=Timestamp('1967-12-31'),
-        offset=DateOffset(weekday=TU(1)),
+    'Election Day',
+    month=11,
+    day=2,
+    start_date=Timestamp('1848-1-1'),
+    end_date=Timestamp('1967-12-31'),
+    offset=DateOffset(weekday=TU(1)),
 )
 # http://www.tradingtheodds.com/nyse-full-day-closings/
 USElectionDay1968to1980 = Holiday(
-        'Election Day',
-        month=11,
-        day=2,
-        start_date=Timestamp('1968-01-01'),
-        end_date=Timestamp('1980-12-31'),
-        observance=following_tuesday_every_four_years_observance
+    'Election Day',
+    month=11,
+    day=2,
+    start_date=Timestamp('1968-01-01'),
+    end_date=Timestamp('1980-12-31'),
+    observance=following_tuesday_every_four_years_observance
 )
 # http://www.tradingtheodds.com/nyse-full-day-closings/
 USVeteransDay1934to1953 = Holiday(
@@ -256,7 +237,6 @@ BattleOfGettysburg = Holiday(
     start_date=Timestamp("1863-07-01"),
     end_date=Timestamp("1863-07-03")
 )
-
 
 # http://www.tradingtheodds.com/nyse-full-day-closings/
 November29BacklogRelief = [Timestamp('1929-11-01', tz='UTC'),

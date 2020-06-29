@@ -1,8 +1,9 @@
+import os
 
 import pandas as pd
 import pytz
-import os
 from pandas.testing import assert_index_equal
+
 from pandas_market_calendars.exchange_calendar_nyse import NYSEExchangeCalendar
 
 
@@ -249,7 +250,7 @@ def test_all_full_day_holidays_since_1928(request):
     # get the expected dates from the csv file
     expected = pd.read_csv(os.path.join(request.fspath.dirname, 'data', 'nyse_all_full_day_holidays_since_1928.csv'),
                            index_col=0, parse_dates=True, header=None).index
-    del expected.name
+    expected.name = None
 
     # calculated expected going direct to the underlying regular and ad_hoc calendars
     nyse = NYSEExchangeCalendar()

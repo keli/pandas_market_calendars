@@ -1,18 +1,11 @@
 from datetime import time
-from pandas.tseries.holiday import (
-    Holiday,
-    DateOffset,
-    MO,
-    weekend_to_monday,
-    GoodFriday
-)
+
+from pandas.tseries.holiday import AbstractHolidayCalendar, DateOffset, GoodFriday, Holiday, MO, weekend_to_monday
 from pytz import timezone
 
-from .market_calendar import MarketCalendar
-from pandas.tseries.holiday import AbstractHolidayCalendar
-
+from .holidays_uk import BoxingDay, WeekendBoxingDay, WeekendChristmas
 from .holidays_us import Christmas
-from .holidays_uk import WeekendChristmas, BoxingDay, WeekendBoxingDay
+from .market_calendar import MarketCalendar
 
 # New Year's Day
 TSXNewYearsDay = Holiday(
@@ -88,7 +81,7 @@ class TSXExchangeCalendar(MarketCalendar):
     - Boxing Day
     - Dec. 28th (if Boxing Day is on a weekend)
     """
-    aliases = ['TSX','TSXV']
+    aliases = ['TSX', 'TSXV']
 
     @property
     def name(self):

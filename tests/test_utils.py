@@ -1,8 +1,8 @@
-
 import datetime
+
 import pandas as pd
 import pytest
-from pandas.util.testing import assert_index_equal, assert_frame_equal
+from pandas.testing import assert_frame_equal, assert_index_equal
 
 import pandas_market_calendars as mcal
 from pandas_market_calendars.exchange_calendar_nyse import NYSEExchangeCalendar
@@ -20,8 +20,11 @@ def test_get_calendar():
     cal = mcal.get_calendar('CME')
 
 
-def test_date_range_daily():
+def test_get_calendar_names():
+    assert 'ASX' in mcal.get_calendar_names()
 
+
+def test_date_range_daily():
     cal = FakeCalendar(open_time=datetime.time(9, 0), close_time=datetime.time(12, 0))
 
     # If closed='right' and force_close False for daily then the result is empty
@@ -93,7 +96,6 @@ def test_date_range_lower_freq():
 
 
 def test_date_range_hour():
-
     cal = FakeCalendar(open_time=datetime.time(9, 0), close_time=datetime.time(10, 30))
 
     # New Years Eve and weekend skipped
@@ -146,7 +148,6 @@ def test_date_range_hour():
 
 
 def test_date_range_minute():
-
     cal = FakeCalendar(open_time=datetime.time(9, 0), close_time=datetime.time(10, 30))
 
     # New Years Eve and weekend skipped

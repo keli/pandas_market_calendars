@@ -1,24 +1,13 @@
 from datetime import time
 from itertools import chain
 
-from pandas.tseries.holiday import (
-    GoodFriday,
-    USPresidentsDay,
-    USLaborDay,
-    USThanksgivingDay
-)
 from pandas import Timestamp
+from pandas.tseries.holiday import AbstractHolidayCalendar, GoodFriday, USLaborDay, USPresidentsDay, USThanksgivingDay
 from pytz import timezone
 
+from .holidays_us import (Christmas, USIndependenceDay, USMartinLutherKingJrAfter1998, USMemorialDay,
+                          USNationalDaysofMourning, USNewYearsDay)
 from .market_calendar import MarketCalendar
-from pandas.tseries.holiday import AbstractHolidayCalendar
-from .holidays_us import (
-    USNewYearsDay,
-    Christmas,
-    USMartinLutherKingJrAfter1998,
-    USMemorialDay,
-    USIndependenceDay,
-    USNationalDaysofMourning)
 
 
 class ICEExchangeCalendar(MarketCalendar):
@@ -30,7 +19,7 @@ class ICEExchangeCalendar(MarketCalendar):
 
     https://www.theice.com/publicdocs/futures_us/ICE_Futures_US_Regular_Trading_Hours.pdf # noqa
     """
-    aliases = ['ICE','ICEUS','NYFE']
+    aliases = ['ICE', 'ICEUS', 'NYFE']
 
     @property
     def name(self):

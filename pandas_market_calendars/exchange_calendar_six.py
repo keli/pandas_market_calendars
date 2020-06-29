@@ -1,18 +1,10 @@
 from datetime import time
-from pandas.tseries.holiday import (
-    Holiday,
-    previous_friday,
-    GoodFriday,
-    EasterMonday,
-    Easter,
-    AbstractHolidayCalendar,
-    Day,
-)
+
+from pandas.tseries.holiday import (AbstractHolidayCalendar, Day, Easter, EasterMonday, GoodFriday, Holiday,
+                                    previous_friday)
 from pytz import timezone
-from .market_calendar import (
-    MarketCalendar,
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY,
-)
+
+from .market_calendar import (FRIDAY, MONDAY, MarketCalendar, THURSDAY, TUESDAY, WEDNESDAY)
 
 # New Year's Eve
 NewYearsEve = Holiday(
@@ -70,7 +62,6 @@ ChristmasEve = Holiday(
     'Christmas Eve',
     month=12,
     day=24,
-    observance=previous_friday,
 )
 # Christmas
 Christmas = Holiday(
@@ -79,27 +70,11 @@ Christmas = Holiday(
     day=25,
     days_of_week=(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY),
 )
-# If christmas day is Saturday Monday 27th is a holiday
-# If christmas day is sunday the Tuesday 27th is a holiday
-WeekendChristmas = Holiday(
-    "Weekend Christmas",
-    month=12,
-    day=27,
-    days_of_week=(MONDAY, TUESDAY),
-)
 # Boxing day
 BoxingDay = Holiday(
     "Boxing Day",
     month=12,
     day=26,
-)
-# If boxing day is saturday then Monday 28th is a holiday
-# If boxing day is sunday then Tuesday 28th is a holiday
-WeekendBoxingDay = Holiday(
-    "Weekend Boxing Day",
-    month=12,
-    day=28,
-    days_of_week=(MONDAY, TUESDAY),
 )
 
 
@@ -139,18 +114,6 @@ class SIXExchangeCalendar(MarketCalendar):
             SwissNationalDay,
             ChristmasEve,
             Christmas,
-            WeekendChristmas,
             BoxingDay,
-            WeekendBoxingDay,
             NewYearsEve,
         ])
-
-#    @property
-#    def special_closes(self):
-#        return [(
-#            time(12, 30),
-#            AbstractHolidayCalendar(rules=[
-#                ChristmasEve,
-#                NewYearsEve,
-#            ])
-#        )]

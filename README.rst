@@ -11,10 +11,6 @@ Market calendars to use with pandas for trading applications.
 .. image:: https://coveralls.io/repos/github/rsheftel/pandas_market_calendars/badge.svg?branch=master
     :target: https://coveralls.io/github/rsheftel/pandas_market_calendars?branch=master
 
-.. image:: https://landscape.io/github/rsheftel/pandas_market_calendars/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/rsheftel/pandas_market_calendars/master
-   :alt: Code Health
-
 .. image:: https://readthedocs.org/projects/pandas-market-calendars/badge/?version=latest
    :target: http://pandas-market-calendars.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
@@ -39,8 +35,12 @@ their excellent work to Quantopian.
 
 As of v1.0 this package only works with Python3. This is consistent with Pandas dropping support for Python2.
 
+Source location
+~~~~~~~~~~~~~~~
+Hosted on GitHub: https://github.com/rsheftel/pandas_market_calendars
+
 Installation
-------------
+~~~~~~~~~~~~
 ``pip install pandas_market_calendars``
 
 Arch Linux package available here: https://aur.archlinux.org/packages/python-pandas_market_calendars/
@@ -121,6 +121,15 @@ Quick Start
                    '2012-07-10 18:30:00+00:00', '2012-07-10 19:30:00+00:00',
                    '2012-07-10 20:00:00+00:00'],
                   dtype='datetime64[ns, UTC]', freq=None)
+
+Contributing
+------------
+All improvements and additional (and corrections) in the form of pull requests are welcome. This package will grow in
+value and correctness the more eyes are on it.
+
+To add new functionality please include tests which are in standard pytest format. 
+
+Use pytest to run the test suite.
 
 Future
 ------

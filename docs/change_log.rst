@@ -107,3 +107,25 @@ Updates
 1.1 (5/3/19)
 ~~~~~~~~~~~~
 - add JPX Ascension Day holidays for 2019 from PR #64
+
+1.2 (10/22/19)
+~~~~~~~~~~~~~~
+- Support calendars with valid business days on the weekend (PR #75)
+- Fixed SSE 2019 labour's day holidays (PR #74)
+- Better JPX calendar support for the time period 1949-2099 (PR #72)
+- Reformat Japan's Ascension days, removed duplicate days (PR #68)
+- Added German national holidays (PR #77)
+
+1.3 (4/23/20)
+~~~~~~~~~~~~~
+- Fixes to support Pandas v1.0
+- Remove support for Python 3.4 based on underlying packages removing support for v3.4
+- Added ASXExchangeCalendar from PR #85
+- Fixes to UK holidays in #84
+
+1.4 (6/9/20)
+~~~~~~~~~~~~
+- Added product specific contract calendars for CME futures exchange
+- First calendar is the CME Agricultural calendar
+- Add the Bombay exchange (XBOM) from #96
+- Fixed Christmas holidays in SIX #100

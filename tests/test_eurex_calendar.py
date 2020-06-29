@@ -1,6 +1,6 @@
-
 import pandas as pd
 import pytz
+
 from pandas_market_calendars.exchange_calendar_eurex import EUREXExchangeCalendar
 
 

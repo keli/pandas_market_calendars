@@ -1,5 +1,5 @@
-
 import pandas as pd
+
 from pandas_market_calendars.exchange_calendar_cfe import CFEExchangeCalendar
 
 
@@ -39,6 +39,7 @@ def test_2016_early_closes():
 def test_open_time_tz():
     cfe = CFEExchangeCalendar()
     assert cfe.open_time.tzinfo == cfe.tz
+
 
 def test_close_time_tz():
     cfe = CFEExchangeCalendar()

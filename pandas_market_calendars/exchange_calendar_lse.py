@@ -14,31 +14,17 @@
 # limitations under the License.
 
 from datetime import time
-from pytz import timezone
-from itertools import chain
-from pandas.tseries.holiday import AbstractHolidayCalendar
-from .market_calendar import (
-    MarketCalendar
-)
 
-from pandas.tseries.holiday import (
-    GoodFriday,
-    EasterMonday,
-)
+from pandas.tseries.holiday import AbstractHolidayCalendar, EasterMonday, GoodFriday
+from pytz import timezone
+
 from .holidays_uk import (
-    LSENewYearsEve,
-    LSENewYearsDay,
-    MayBank,
-    SpringBank,
-    SummerBank,
-    ChristmasEve,
-    Christmas,
-    WeekendChristmas,
-    BoxingDay,
-    WeekendBoxingDay,
-    BankHoliday,
-    QueensJubilee
+    BoxingDay, Christmas, ChristmasEve, LSENewYearsDay, LSENewYearsEve,
+    MayBank_pre_1995, MayBank_post_1995_pre_2020, MayBank_post_2020,
+    SpringBank_pre_2002, SpringBank_post_2002_pre_2012, SpringBank_post_2012,
+    SummerBank, WeekendBoxingDay, WeekendChristmas, UniqueCloses,
 )
+from .market_calendar import MarketCalendar
 
 
 class LSEExchangeCalendar(MarketCalendar):
@@ -84,8 +70,8 @@ class LSEExchangeCalendar(MarketCalendar):
             LSENewYearsDay,
             GoodFriday,
             EasterMonday,
-            MayBank,
-            SpringBank,
+            MayBank_pre_1995, MayBank_post_1995_pre_2020, MayBank_post_2020,
+            SpringBank_pre_2002, SpringBank_post_2002_pre_2012, SpringBank_post_2012,
             SummerBank,
             Christmas,
             WeekendChristmas,
@@ -95,10 +81,7 @@ class LSEExchangeCalendar(MarketCalendar):
 
     @property
     def adhoc_holidays(self):
-        return list(chain(
-            BankHoliday,
-            QueensJubilee,
-        ))
+        return UniqueCloses
 
     @property
     def special_closes(self):

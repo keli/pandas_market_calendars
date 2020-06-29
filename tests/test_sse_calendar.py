@@ -1,7 +1,6 @@
 import datetime
 
 import pandas as pd
-from pandas import Timestamp
 import pytz
 
 from pandas_market_calendars.exchange_calendar_sse import SSEExchangeCalendar
@@ -16,7 +15,7 @@ def test_time_zone():
 def test_all_holidays():
     sse_calendar = SSEExchangeCalendar()
 
-    trading_days = sse_calendar.valid_days(pd.Timestamp('2004-01-01'), pd.Timestamp('2018-12-31'))
+    trading_days = sse_calendar.valid_days(pd.Timestamp('2004-01-01'), pd.Timestamp('2020-12-31'))
     for session_label in all_holidays:
         assert session_label not in trading_days
 
@@ -37,4 +36,3 @@ def test_sse_closes_at_lunch():
         schedule=sse_schedule,
         timestamp=datetime.datetime(2015, 1, 14, 12, 0, tzinfo=pytz.timezone('Asia/Shanghai'))
     )
-

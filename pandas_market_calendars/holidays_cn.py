@@ -1,13 +1,13 @@
 from pandas import Timestamp
 
-# Chinese holidays are quite irregular because 
+# Chinese holidays are quite irregular because
 # 1. some of the holidays are base on traditional Chinese calendar (lunisolar)
-# 2. the government tries very hard to arrange multi-day holidays 
+# 2. the government tries very hard to arrange multi-day holidays
 # and is not consistent in ways of doing so.
 
-# So instead of writing rules for them, it's much cleaner to just use 
-# all past holidays as ad hoc holidays. 
-# 
+# So instead of writing rules for them, it's much cleaner to just use
+# all past holidays as ad hoc holidays.
+#
 # Records start from 1992. SSE was founded at the end of 1990.
 
 all_holidays = [
@@ -410,6 +410,7 @@ all_holidays = [
     Timestamp('2015-02-24'),
     Timestamp('2015-04-06'),
     Timestamp('2015-05-01'),
+    Timestamp('2015-06-22'),
     Timestamp('2015-09-03'),
     Timestamp('2015-09-04'),
     Timestamp('2015-10-01'),
@@ -469,7 +470,7 @@ all_holidays = [
     Timestamp('2018-10-05'),
     Timestamp('2018-12-30'),
     Timestamp('2018-12-31'),
-    Timestamp('2019-01-01'),    
+    Timestamp('2019-01-01'),
     Timestamp('2019-02-04'),
     Timestamp('2019-02-05'),
     Timestamp('2019-02-06'),
@@ -490,7 +491,10 @@ all_holidays = [
     Timestamp('2019-10-05'),
     Timestamp('2019-10-06'),
     Timestamp('2019-10-07'),
- ]
+    Timestamp('2020-01-31'),
+    Timestamp('2020-05-04'),
+    Timestamp('2020-05-05'),
+]
 
 # The following holidays are based on Solar terms or Chinese lunisolar calendar,
 # so pre-calculated mappings to Gregorian calendar are kept here from 2019-2099

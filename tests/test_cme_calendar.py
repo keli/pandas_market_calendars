@@ -1,6 +1,6 @@
-
 import pandas as pd
 import pytz
+
 from pandas_market_calendars.exchange_calendar_cme import CMEExchangeCalendar
 
 
@@ -41,7 +41,6 @@ def test_2016_early_closes():
 
 
 def test_dec_jan():
-
     cme = CMEExchangeCalendar()
     schedule = cme.schedule('2016-12-30', '2017-01-10')
 
