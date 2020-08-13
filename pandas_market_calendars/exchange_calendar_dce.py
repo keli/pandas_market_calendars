@@ -46,7 +46,7 @@ class DCEExchangeCalendar(SSEExchangeCalendar):
 
     @property
     def close_time_default(self):
-        return time(15, tzinfo=self.tz)
+        return time(15, 15, tzinfo=self.tz)
 
     @staticmethod
     def open_at_time(schedule, timestamp, include_close=False):
